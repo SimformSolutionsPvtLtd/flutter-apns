@@ -225,7 +225,7 @@ func getFlutterError(_ error: Error) -> FlutterError {
     }
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        var userInfo = response.notification.request.content.userInfo
+        guard var userInfo = response.notification.request.content.userInfo as NSDictionary? as? [String: Any] else {return}
         guard userInfo["aps"] != nil else {
             return
         }
