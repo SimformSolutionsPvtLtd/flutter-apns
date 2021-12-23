@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
@@ -86,11 +87,14 @@ class ApnsPushConnectorOnly {
   }
 
   ApnsRemoteMessage _extractMessage(MethodCall call) {
-    final map = call.arguments as Map;
     // fix null safety errors
+    final Map<String, dynamic> map =
+        json.decode(json.encode(call.arguments)) as Map<String, dynamic>;
+
     map.putIfAbsent('contentAvailable', () => false);
     map.putIfAbsent('mutableContent', () => false);
-    return ApnsRemoteMessage.fromMap(map.cast());
+    map.putIfAbsent('data', () => map["aps"]);
+    return ApnsRemoteMessage.fromMap(map);
   }
 
   /// Handler that returns true/false to decide if push alert should be displayed when in foreground.
