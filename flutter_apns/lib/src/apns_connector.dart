@@ -14,7 +14,7 @@ class ApnsPushConnector extends ApnsPushConnectorOnly implements PushConnector {
         return null;
       }
 
-      return (apnsMessage) => input(RemoteMessage.fromMap(json.decode(json.encode(apnsMessage.payload)) as Map<String, dynamic>)));
+      return (apnsMessage) => input(RemoteMessage.fromMap(json.decode(json.encode(apnsMessage.payload)) as Map<String, dynamic>));
     }
 
     configureApns(
