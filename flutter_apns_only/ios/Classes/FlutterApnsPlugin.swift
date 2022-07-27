@@ -195,7 +195,12 @@ func getFlutterError(_ error: Error) -> FlutterError {
         if resumingFromBackground {
             onResume(userInfo: userInfo)
         } else {
-            channel.invokeMethod("onMessage", arguments: userInfo)
+            if let launchNotification = launchNotification {
+                channel.invokeMethod("onLaunch", arguments: userInfo)
+                self.launchNotification = nil
+            } else{
+                channel.invokeMethod("onMessage", arguments: userInfo)
+            }
         }
         
         completionHandler(.noData)
