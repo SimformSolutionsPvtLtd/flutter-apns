@@ -193,13 +193,18 @@ func getFlutterError(_ error: Error) -> FlutterError {
         //let userInfo = FlutterApnsSerialization.remoteMessageUserInfo(toDict: userInfo)
 
         if resumingFromBackground {
-            onResume(userInfo: userInfo)
+             // Commented below code as it was triggering notification tap on background
+            //onResume(userInfo: userInfo)
         } else {
             if let launchNotification = launchNotification {
                 channel.invokeMethod("onLaunch", arguments: userInfo)
                 self.launchNotification = nil
             } else{
-                channel.invokeMethod("onMessage", arguments: userInfo)
+                // (Janak): Commented below code as Chime chat notification were getting
+                // triggered twice.
+                // Reference for issue:
+                // https://blog.kulman.sk/workaround-for-didreceiveremotenotification-not-called-in-ios11/
+                //channel.invokeMethod("onMessage", arguments: userInfo)
             }
         }
         

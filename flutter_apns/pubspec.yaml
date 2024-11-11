@@ -16,7 +16,7 @@ dependencies:
     git:
       url: https://github.com/SimformSolutionsPvtLtd/flutter-apns.git
       path: flutter_apns_only
-      ref: myfragilepak-master
+      ref: baseCampEd-master
 
 dev_dependencies:
   flutter_test:
