@@ -1,5 +1,4 @@
 .packages
-/.idea/.gitignore
-/.idea/flutter-apns.iml
-/.idea/modules.xml
-/.idea/vcs.xml
+.idea
+.dart_tool
+.vscode
