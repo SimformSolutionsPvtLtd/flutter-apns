@@ -4,8 +4,8 @@ version: 1.5.1
 homepage: https://github.com/mwaylabs/flutter-apns
 
 environment:
-  sdk: '>=3.5.3 <4.0.0'
-  flutter: ">=3.0.0"
+  sdk: '>=3.5.4 <4.0.0'
+  flutter: ">=3.24.5 <4.0.0"
 
 dependencies:
   flutter:
