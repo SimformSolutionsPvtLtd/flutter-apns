@@ -10,4 +10,4 @@ flutter_export_environment.sh
 .flutter-plugins-dependencies
 .flutter-plugins
 pubspec.lock
-melos_flutter_apns.iml
+*.iml
