@@ -6,3 +6,7 @@
 
 build/
 pubspec.lock
+.idea/
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
