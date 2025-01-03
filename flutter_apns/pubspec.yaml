@@ -2,6 +2,7 @@ name: flutter_apns
 description: APNS push notification plugin. Uses firebase_messaging on Android, but replaces it on iOS with custom implementation.
 version: 1.5.1
 homepage: https://github.com/mwaylabs/flutter-apns
+publish_to: none
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
@@ -10,13 +11,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^2.23.0
-  firebase_messaging: ^14.7.5
+  firebase_core: ^3.9.0
+  firebase_messaging: ^15.1.6
   flutter_apns_only:
     git:
       url: https://github.com/SimformSolutionsPvtLtd/flutter-apns.git
       path: flutter_apns_only
-      ref: baseCampEd-master
+      ref: notification-master
 
 dev_dependencies:
   flutter_test:
